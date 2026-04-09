@@ -1,5 +1,5 @@
 """
-ASGI config for studying project.
+ASGI config for monthlu_challenges project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'studying.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'monthlu_challenges.settings')
 
 application = get_asgi_application()
