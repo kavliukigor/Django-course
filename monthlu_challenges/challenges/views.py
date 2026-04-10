@@ -14,14 +14,19 @@ challenges ={
     'august':'Another text messgae',
     'september':'One more text',
     'november':'And one more sense less text',
-    'october':'I am tored to write this',
+    'october':'I am tired to write this',
     'december':'Already final'
 }
 # Create your views here.
 
 def monthly_challenge_by_name(request,month):
-    challenge_text=challenges[month]
-    return HttpResponse(challenge_text)
+    try:
+        challenge_text=challenges[month]
+        response_data=f'<h1>{challenge_text}</h1>'
+        return HttpResponse(response_data)
+    except:
+        return HttpResponseNotFound('<h1>This month is not suported</h1>')
+
 
 def monthly(request, month):
     months_list=list(challenges.keys())
@@ -30,3 +35,13 @@ def monthly(request, month):
     redirect_month=months_list[month-1]
     redirect_path=reverse('month-challenge',args=[redirect_month])
     return HttpResponseRedirect(redirect_path)
+
+def index(request):
+    list_item=''
+    months=list(challenges.keys())
+    for month in months:
+        capitalized_month=month.capitalize()
+        month_path=reverse('month-challenge', args=[month])
+        list_item+=f"<li><a href='{month_path}'>{capitalized_month}</a></li>"
+    response_data=f'<ul>{list_item}</ul>'
+    return HttpResponse(response_data)
