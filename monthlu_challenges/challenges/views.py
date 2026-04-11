@@ -2,6 +2,7 @@ from calendar import month
 from django.http import HttpResponse,HttpResponseNotFound, HttpResponseRedirect, HttpResponseServerError
 from django.shortcuts import render
 from django.urls import reverse
+from django.template.loader import render_to_string
 
 challenges ={
     'january':'This works',
@@ -22,7 +23,7 @@ challenges ={
 def monthly_challenge_by_name(request,month):
     try:
         challenge_text=challenges[month]
-        response_data=f'<h1>{challenge_text}</h1>'
+        response_data=render_to_string('challenges/challenge.html')
         return HttpResponse(response_data)
     except:
         return HttpResponseNotFound('<h1>This month is not suported</h1>')
