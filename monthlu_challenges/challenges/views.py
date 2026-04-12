@@ -6,7 +6,7 @@ from django.urls import reverse
 
 challenges ={
     'january':'This works',
-    'february':'Challenge complete!',
+    'february':'Tiririririr tururururururururur',
     'march':'Learn Django for at least 20 minutes',
     'april':'Walk at least 20k of steps per day',
     'may': 'BimBImbBImBIM',

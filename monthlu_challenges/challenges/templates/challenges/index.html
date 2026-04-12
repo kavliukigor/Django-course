@@ -2,7 +2,8 @@
 {%load static%}
 
 {%block css_files%}
-<link rel='stylesheet' href='{%static "challenges/challenges.css"%}'>
+<link rel='stylesheet' href='{%static "challenges/index.css"%}'>
+<link rel='stylesheet' href='{%static "challenges/includes/header.css"%}'>
 {%endblock%}
 
 {%block page_title%}
@@ -10,7 +11,7 @@
 {%endblock%}
 
 {%block content%}
-    <h1>All challenges</h1>
+    {% include 'challenges/includes/header.html' %}
         <ul>
             {%for month in months%}
             <li>
