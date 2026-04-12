@@ -1,10 +1,11 @@
+{%extends 'base.html'%}
 
-
-{%block page_title%}<h1>Challenge for {{title|title}}</h1>{%endblock%}
+{%block page_title%}Challenge for {{title|title}}{%endblock%}
 
 {%block content%}
+    {%include 'challenges/includes/header.html'%}
     {%if text is not None%}
-        <h2>{{text}}</h2>
+        <h1>{{text}}</h2>
     {%else%}
         <h2>No challenge for this month</h2>
     {%endif%}

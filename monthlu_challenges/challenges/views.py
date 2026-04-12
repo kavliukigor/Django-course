@@ -1,5 +1,5 @@
 from calendar import month
-from django.http import HttpResponse,HttpResponseNotFound, HttpResponseRedirect, HttpResponseServerError
+from django.http import Http404,HttpResponseNotFound, HttpResponseRedirect, HttpResponseServerError
 from django.shortcuts import render
 from django.urls import reverse
 
@@ -28,7 +28,7 @@ def monthly_challenge_by_name(request,month):
             'title': month
         })
     except:
-        return HttpResponseNotFound('<h1>This month is not suported</h1>')
+        raise Http404()
 
 
 def monthly(request, month):
