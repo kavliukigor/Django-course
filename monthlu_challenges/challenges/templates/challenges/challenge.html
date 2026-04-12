@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title|title}} challenge</title>
-</head>
-<body>
-    <h1>Challenge for {{title|title}}</h1>
+{%block page_title%}<h1>Challenge for {{title|title}}</h1>{%endblock%}
+
+{%block content%}
     {%if text is not None%}
         <h2>{{text}}</h2>
     {%else%}
         <h2>No challenge for this month</h2>
     {%endif%}
-</body>
-</html>
+{%endblock%}
