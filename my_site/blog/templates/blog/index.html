@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{%block title%}
+    My blog
+{%endblock%}
+
+{%block css_files%}
+<link rel='stylesheet' href='{% static "blog/index.css" %}'/>
+{%endblock%}
+
+{%block content%}
+    <header id='main'>
+        <h1><a href="">Igor's Blog</a></h1>
+        <nav>
+            <a href="">All posts</a>
+        </nav>
+    </header>
+
+    <section id='welcome'>
+        <header>
+            <img src='' alt='Igor - The author of blog'/>
+            <h2>Igor's Blog</h2>
+        </header>
+        <p> Hi i'm Igor and i love to programing</p>
+    </section>
+
+    <section id='latest-posts'>
+        <h2>My latest thoughts</h2>
+        <ul>
+            <il>
+                <article class = post>
+                    <a href=''>
+                        <img src='' alt='Mountain hiking'/>
+                        <div class='post__content'>
+                            <h3>Mountain Hiking</h3>
+                            <p>There's nothing like the views you get when hiking the mountains! 
+                                And i wasn't even prepared for what happened whilst i was enjoying the view!
+                            </p>
+                        </div>
+                    </a>
+                </aricle>
+            </li>
+        </ul>
+    </section>
+    
+    <section id='about'>
+        <h2> What i do</h2>
+        <p>I love sueta and discovering something new</p>
+        <p>Now my main taget to become top backend developer 
+            and keep making some sueta</p>
+{%endblock%}
