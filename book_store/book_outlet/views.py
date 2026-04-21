@@ -7,7 +7,7 @@ from .models import Book
 
 
 def index(request):
-    books = Book.objects.all()
+    books = Book.objects.all().order_by('title')
     num=books.count()
     avg=round(books.aggregate(Avg('rating'))['rating__avg'] or 0, 1)
     return render(request,'book_outlet/index.html',{
